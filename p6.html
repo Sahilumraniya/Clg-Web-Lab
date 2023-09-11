@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P6</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5px 0px;
+    }
+    .logo > img {
+      width: 50px;
+      height: 50px;
+    }
+    .links {
+      display: flex;
+    }
+    .link {
+      list-style: none;
+      margin: 0px 50px;
+      cursor: pointer;
+      transition: border-bottom 5s ease-in-out;
+    }
+    .link:hover {
+      border-bottom: 2px solid #f1f1f1;
+    }
+    section {
+      width: 99vw;
+      height: 40vh;
+      display: flex;
+      margin: 10px 5px;
+    }
+    .container {
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      width: 33%;
+      height: 100%;
+      margin: 5px 5px;
+      align-items: center;
+      font-size: larger;
+      font-weight: bold;
+      background-color: rgb(90, 135, 174);
+      transition: all 0.3s ease-in;
+    }
+    .container:hover {
+      scale: 1.1;
+      border-radius: 2px;
+      background-color: rgb(47, 74, 224);
+    }
+    .main {
+      width: 70%;
+    }
+    footer {
+      margin: 0px 10px;
+      height: 30px;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png"
+        />
+      </div>
+      <ul class="links">
+        <li class="link">Home</li>
+        <li class="link">Chats</li>
+        <li class="link">Status</li>
+        <li class="link">Account</li>
+      </ul>
+    </header>
+    <hr>
+    <section>
+      <div class="container">Navigation</div>
+      <div class="container">Help</div>
+      <div class="container">Storage and Data</div>
+    </section>
+    <section>
+      <div class="container">Left</div>
+      <div class="container main">Main</div>
+      <div class="container">Rigth</div>
+    </section>
+    <hr>
+    <footer>Footer</footer>
+  </body>
+</html>
