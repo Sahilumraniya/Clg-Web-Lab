@@ -1,100 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Form</title>
+  </head>
+  <style>
+    /* Reset some default browser styles */
+    body,
+    h1,
+    h2,
+    p,
+    form,
+    label,
+    input,
+    select,
+    textarea,
+    button {
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      font-family: Arial, sans-serif;
+    }
 
-<head>
-    <title>Student Registration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f1f1;
-        }
+    body {
+        padding: 25px 0px;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px 50px;
-            background-color: #313131;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      width: 400px;
+    }
 
-        h2 {
-            text-align: center;
-            color: #f2f1f1;
-        }
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        label {
-            font-weight: bold;
-            color: #f2f1f1;
-        }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 16px;
-        }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
-        select {
-            height: 40px;
-        }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="color"],
+    textarea,
+    select {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-        textarea {
-            height: 100px;
-        }
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 5px;
+    }
 
-        input[type="submit"] {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            padding: 12px 20px;
-            cursor: pointer;
-            font-size: 18px;
-        }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
 
-<body>
-    <div class="container">
-        <h2>Student Registration</h2>
-        <form>
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+    /* Additional styling for the color input */
+    [type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
+    [type="color"]::-webkit-color-swatch {
+      border: none;
+    }
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    /* Styling for the form layout */
+    br {
+      clear: both;
+    }
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
+  <body>
+    <h1>Sample Form</h1>
+    <form action="#" method="post">
+      <label for="text-input">Name :</label>
+      <input
+        type="text"
+        id="text-input"
+        name="text-input"
+        placeholder="Enter text"
+      />
 
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
+      <br /><br />
 
-            <label for="address">Address:</label>
-            <textarea id="address" name="address" required></textarea>
+      <label for="email-input">Email :</label>
+      <input
+        type="email"
+        id="email-input"
+        name="email-input"
+        placeholder="example@example.com"
+      />
 
-            <input type="submit" value="Register">
-        </form>
-    </div>
-</body>
+      <br /><br />
 
+      <label for="password-input">Password :</label>
+      <input
+        type="password"
+        id="password-input"
+        name="password-input"
+        placeholder="Password"
+      />
+
+      <br /><br />
+
+      <label for="number-input">Roll Number :</label>
+      <input
+        type="number"
+        id="number-input"
+        name="number-input"
+        min="1"
+        max="100"
+        step="1"
+      />
+
+      <br /><br />
+
+      <label for="date-input">BOD Date :</label>
+      <input type="date" id="date-input" name="date-input" />
+
+      <br /><br />
+
+      <label for="checkbox-input">Hobby :</label>
+      <input type="checkbox" id="cricket" name="checkbox-input" />
+      <label for="cricket">Cricket</label>
+      <input type="checkbox" id="reading" name="checkbox-input" />
+      <label for="reading">Reading</label>
+      <input type="checkbox" id="writing" name="checkbox-input" />
+      <label for="writing">Writing</label>
+      <input type="checkbox" id="painting" name="checkbox-input" />
+      <label for="painting">Painting</label>
+      <input type="checkbox" id="drawing" name="checkbox-input" />
+      <label for="drawing">Drawing</label>
+
+      <br /><br />
+
+      <label for="radio-input">Collage :</label>
+      <input
+        type="radio"
+        id="radio-input1"
+        name="radio-group"
+        value="Option 1"
+      />
+      <label for="radio-input1">ASOIT</label>
+      <input
+        type="radio"
+        id="radio-input2"
+        name="radio-group"
+        value="Option 2"
+      />
+      <label for="radio-input2">SOCET</label>
+
+      <br /><br />
+
+      <label for="color">Favorite Color : </label>
+      <input type="color" name="Color" id="color" />
+      <br /><br />
+
+      <label for="textarea-input">Address :</label>
+      <textarea
+        id="textarea-input"
+        name="textarea-input"
+        rows="4"
+        cols="50"
+        placeholder="Enter text"
+      ></textarea>
+
+      <br /><br />
+
+      <label for="select-input">Select Class:</label>
+      <select id="select-input" name="select-input">
+        <option value="option1">CE1</option>
+        <option value="option2">CE2</option>
+      </select>
+
+      <br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
 </html>

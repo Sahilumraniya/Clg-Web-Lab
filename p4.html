@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Frameset Example</title>
+    <style>
+      .iframe-container {
+        display: flex;
+        justify-content: space-between;
+      }
 
-<head>
-  <title>Frameset Example</title>
-</head>
-<body>
-  <div>
-<frameset cols="33%, 33%, 33%">
-  <frame src="https://asoit.edu.in/" name="frame1">
-  <frame src="https://silveroakuni.ac.in/" name="frame2">
-  <frame src="https://studentportal.silveroakuni.ac.in/UMSStudents/login.aspx" name="frame3">
-</frameset>
-</div>
-</body>
+      .iframe-container iframe {
+        width: 33%;
+        border: none;
+        height: 70vh; /* Adjust the height as needed */
+      }
+      a{
+        font: 1.8rem sans-serif;
+        margin: 150px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 align="center">Header</h1>
+    <a href="#asoit"">ASOIT</a>
+    <a href="#socet">SOU</a>
+    <a
+      href="#student"
+      >Student Protal</a
+    >
+    <div class="iframe-container">
+      <iframe src="https://asoit.edu.in/" id="asoit" frameborder="0"></iframe>
+      <iframe src="https://silveroakuni.ac.in/" id="socet" frameborder="0"></iframe>
+      <iframe
+        src="https://studentportal.silveroakuni.ac.in/UMSStudents/login.aspx"
+        id="student"
+        frameborder="0"
+      ></iframe>
+    </div>
+    <h2 align="center">Footer</h2>
+  </body>
 </html>
