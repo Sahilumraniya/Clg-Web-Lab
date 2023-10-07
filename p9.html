@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P9</title>
+  </head>
+  <body>
+    <table align="center">
+      <tr>
+        <td colspan="7" id="array"></td>
+      </tr>
+        <tr>
+
+            <td colspan="7" > <br> Array Functions : </td>
+        </tr>
+      <tr>
+        
+        <td><button>PUSH</button></td>
+        <td><button>POP</button></td>
+        <td><button>SHIFT</button></td>
+        <td><button>UNSHIFT</button></td>
+        <td><button>SORT</button></td>
+        <td><button>CONCAT</button></td>
+        <td><button>REVERSE</button></td>
+      </tr>
+    </table>
+  </body>
+  <script>
+    let array = ["Sahil", "Neel", "Shaym"];
+    const show = document.getElementById("array");
+    show.innerHTML = `Array : [ ${array} ]`;
+    document
+      .getElementsByTagName("button")[0]
+      .addEventListener("click", function () {
+        const value = prompt("Enter the value to push");
+        array.push(value);
+        show.innerHTML = `Array : [ ${array} ]`;
+      });
+    document
+      .getElementsByTagName("button")[1]
+      .addEventListener("click", function () {
+        array.pop();
+        show.innerHTML = `Array : [ ${array} ]`;
+      });
+    document
+      .getElementsByTagName("button")[2]
+      .addEventListener("click", function () {
+        array.shift();
+        show.innerHTML = `Array : [ ${array} ]`;
+      });
+    document
+      .getElementsByTagName("button")[3]
+      .addEventListener("click", function () {
+        const value = prompt("Enter the value to unshift");
+        array.unshift(value);
+        show.innerHTML = `Array : [ ${array} ]`;
+      });
+    document
+      .getElementsByTagName("button")[4]
+      .addEventListener("click", function () {
+        array.sort();
+        show.innerHTML = `Array : [ ${array} ]`;
+      });
+    document
+      .getElementsByTagName("button")[5]
+      .addEventListener("click", function () {
+        const value = prompt("Enter the value to concat");
+        array = array.concat(value.split(" "));
+        show.innerHTML = `Array : [ ${array} ]`;
+      });
+    document
+      .getElementsByTagName("button")[6]
+      .addEventListener("click", function () {
+        array.reverse();
+        show.innerHTML = `Array : [ ${array} ]`;
+      });
+  </script>
+</html>

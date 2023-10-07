@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P10</title>
+</head>
+<body>
+    <label for="color"><h1>Select Color</h1></label>
+    <select name="color" id="color">
+        <option value="">select color</option>
+    </select>
+</body>
+<script>
+    const colorArray = ["red","blue","green","yellow","pink","orange","purple","black","white"];
+    const color = document.getElementById("color");
+
+    colorArray.forEach((item)=>{
+        const option = document.createElement("option");
+        option.appendChild(document.createTextNode(item));
+        option.setAttribute("value",item);
+        color.appendChild(option);
+    })
+
+    color.addEventListener("change",()=>{
+        if(color.value == ""){
+            return;
+        }else if(color.value == "black"){
+            document.body.style.color = "white";
+        }else{
+            document.body.style.color = "black";
+        }
+        document.body.style.backgroundColor = color.value;
+    })
+</script>
+</html>

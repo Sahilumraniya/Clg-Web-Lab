@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>P12</title>
+</head>
+<body>
+    <p id="title">SILVER OAK UNIVERSITY</p>
+
+    <script>
+        let title = document.getElementById("title");
+        let fontSize = 24;
+        let interval = setInterval(function() {
+            title.style.fontSize = fontSize + "px";
+            title.style.color = "blue";
+            fontSize++;
+            if (fontSize >= 50) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

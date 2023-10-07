@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P8</title>
+  </head>
+  <body>
+    <h1>Java Script Events</h1>
+    <label for="name">Name : </label>
+    <input
+      type="text"
+      id="name"
+      onchange="onChangeEvent(event)"
+      onmouseover="onMouseOver(event)"
+      onmouseout="onMouseOut(event)"
+      onkeypress="onKeyPress(event)"
+      onfocus="addEvent('onFocus')"
+    />
+    <p id="event">Current Events :</p>
+  </body>
+  <script>
+    function addEvent(eventName){
+        //optimize way to do DOM manipulation
+        const event = document.getElementById("event");
+        const samll = document.createElement("h1");
+        samll.appendChild(document.createTextNode(eventName));
+        if(event.childElementCount>0){
+            event.removeChild(event.childNodes[1]);
+        }
+        event.appendChild(samll);
+    }
+
+    function onChangeEvent(e){
+        console.log("Change "+e.target.value);
+        addEvent("onChange");
+    }
+
+    function onMouseOver(e){
+        console.log("Mouse Over "+e.target.value);
+        addEvent("onMouseOver");
+    }
+
+    function onMouseOut(e){
+        console.log("Mouse Out "+e.target.value);
+        addEvent("onMouseOut");
+    }
+
+    function onKeyPress(e){
+        console.log("Key Press "+e.target.value);
+        addEvent("onKeyPress");
+    }
+  </script>
+</html>

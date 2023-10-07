@@ -6,26 +6,15 @@
     <title>Sample Form</title>
   </head>
   <style>
-    /* Reset some default browser styles */
-    body,
-    h1,
-    h2,
-    p,
-    form,
-    label,
-    input,
-    select,
-    textarea,
-    button {
+    * {
       margin: 0;
       padding: 0;
       border: none;
       outline: none;
       font-family: Arial, sans-serif;
     }
-
     body {
-        padding: 25px 0px;
+      padding: 25px 0px;
       background-color: #f4f4f4;
       display: flex;
       flex-direction: column;
@@ -119,7 +108,7 @@
         type="text"
         id="text-input"
         name="text-input"
-        placeholder="Enter text"
+        placeholder="Enter Name"
       />
 
       <br /><br />
@@ -180,14 +169,14 @@
         type="radio"
         id="radio-input1"
         name="radio-group"
-        value="Option 1"
+        value="ASOIT"
       />
       <label for="radio-input1">ASOIT</label>
       <input
         type="radio"
         id="radio-input2"
         name="radio-group"
-        value="Option 2"
+        value="SOCET"
       />
       <label for="radio-input2">SOCET</label>
 
@@ -203,15 +192,15 @@
         name="textarea-input"
         rows="4"
         cols="50"
-        placeholder="Enter text"
+        placeholder="Enter Address"
       ></textarea>
 
       <br /><br />
 
       <label for="select-input">Select Class:</label>
       <select id="select-input" name="select-input">
-        <option value="option1">CE1</option>
-        <option value="option2">CE2</option>
+        <option value="CE1">CE1</option>
+        <option value="CE2">CE2</option>
       </select>
 
       <br /><br />

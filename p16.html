@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P16</title>
+</head>
+<body>
+    <label for="number">Enter Number Of Trem : </label>
+    <input type="number" id="number">
+    <br>
+    <br>
+    <button onclick="fib()">Print Fibonacci</button>
+    <br><br>
+    
+</body>
+    <script>
+        function fib(){
+            const num = document.getElementById("number").value;
+            let a = 0;
+            let b = 1;
+            let c = 0;
+            let str = "";
+            for(let i=0;i<num;i++){
+                str += c+" ";
+                a = b;
+                b = c;
+                c = a+b;
+            }
+            const h2 = document.createElement("h2");
+            h2.appendChild(document.createTextNode("Fibonacci Numbers : "+str));
+            document.body.appendChild(h2);
+        }
+    </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Background Color Change</title>
+  </head>
+  <body>
+    <h1>Background Color Change</h1>
+    <label for="second">Enter Second : </label>
+    <input type="number" id="second">
+    <button onclick="change()">Change Color</button>
+  </body>
+  <script>
+    function changeColor() {
+      var colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+    function change(){
+        var second = document.getElementById("second").value;
+        document.getElementById("second").value = "";
+        const p = document.createElement("p");
+        p.appendChild(document.createTextNode(`This page will change its background color every ${second} seconds`));
+        document.body.appendChild(p);
+        if(second == ""){
+            return;
+        }
+        setInterval(changeColor, second*1000);
+    }
+  </script>
+</html>

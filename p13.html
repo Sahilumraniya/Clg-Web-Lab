@@ -1,0 +1,35 @@
+<!-- FILEPATH: /E:/code/HTML/clg/p13.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>P13</title>
+  </head>
+  <body>
+    <h1>Pop Boxes in JavaScript</h1>
+    <button onclick="showAlert()">Show Alert Box</button>
+    <button onclick="showConfirm()">Show Confirm Box</button>
+    <button onclick="showPrompt()">Show Prompt Box</button>
+  </body>
+  <script>
+    function showAlert() {
+      alert("This is an alert box!");
+    }
+
+    function showConfirm() {
+      var result = confirm("Press a button!");
+      if (result == true) {
+        alert("You pressed OK!");
+      } else {
+        alert("You pressed Cancel!");
+      }
+    }
+
+    function showPrompt() {
+      var name = prompt("Please enter your name:", "Sahil Umraniya");
+      if (name != null && name != "") {
+        alert("Hello " + name + "! How are you today?");
+      }
+    }
+  </script>
+</html>
