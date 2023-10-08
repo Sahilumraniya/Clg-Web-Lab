@@ -11,10 +11,10 @@
     <input
       type="text"
       id="name"
-      onchange="onChangeEvent(event)"
-      onmouseover="onMouseOver(event)"
-      onmouseout="onMouseOut(event)"
-      onkeypress="onKeyPress(event)"
+      onchange="addEvent('onChange')"
+      onmouseover="addEvent('onMouseOver')"
+      onmouseout="addEvent('onMouseOut')"
+      onkeypress="addEvent('onKeyPress')"
       onfocus="addEvent('onFocus')"
     />
     <p id="event">Current Events :</p>
@@ -29,26 +29,6 @@
             event.removeChild(event.childNodes[1]);
         }
         event.appendChild(samll);
-    }
-
-    function onChangeEvent(e){
-        console.log("Change "+e.target.value);
-        addEvent("onChange");
-    }
-
-    function onMouseOver(e){
-        console.log("Mouse Over "+e.target.value);
-        addEvent("onMouseOver");
-    }
-
-    function onMouseOut(e){
-        console.log("Mouse Out "+e.target.value);
-        addEvent("onMouseOut");
-    }
-
-    function onKeyPress(e){
-        console.log("Key Press "+e.target.value);
-        addEvent("onKeyPress");
     }
   </script>
 </html>

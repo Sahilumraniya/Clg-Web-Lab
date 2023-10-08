@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Registration Form - P14</title>
     <style>
         .error {
             color: red;
@@ -12,19 +12,19 @@
 </head>
 <body>
     <h1>Registration Form</h1>
-    <form onsubmit="return validateForm()" method="post">
+    <form onsubmit="return validateForm(event)" method="post">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name">
         <span class="error" id="nameError"></span>
         <br><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email">
         <span class="error" id="emailError"></span>
         <br><br>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password">
         <span class="error" id="passwordError"></span>
         <br><br>
 
@@ -32,34 +32,41 @@
     </form>
 
     <script>
-        function validateForm() {
+        function validateForm(e) {
+            // Prevent form submission
+            e.preventDefault();
+            
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+            const passwordError = document.getElementById("passwordError");
+            
             // Reset error messages
-            document.getElementById("nameError").textContent = "";
-            document.getElementById("emailError").textContent = "";
-            document.getElementById("passwordError").textContent = "";
+            nameError.textContent = "";
+            emailError.textContent = "";
+            passwordError.textContent = "";
 
             let isValid = true;
 
             // Validate name (not empty)
             if (name === "") {
-                document.getElementById("nameError").textContent = "Name is required";
+                nameError.textContent = "Name is required";
                 isValid = false;
             }
 
             // Validate email (simple pattern check)
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
-                document.getElementById("emailError").textContent = "Invalid email format";
+                emailError.textContent = "Invalid email format";
                 isValid = false;
             }
 
             // Validate password (at least 6 characters)
             if (password.length < 6) {
-                document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
+                passwordError.textContent = "Password must be at least 6 characters";
                 isValid = false;
             }
 
